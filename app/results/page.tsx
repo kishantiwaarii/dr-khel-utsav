@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import "./result.css";
@@ -233,7 +233,7 @@ function getScoreTotal(match: Match) {
   return (match.score1 ?? 0) + (match.score2 ?? 0);
 }
 
-export default function ResultsPage() {
+function ResultsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -1152,5 +1152,19 @@ export default function ResultsPage() {
         </div>
       )}
     </main>
+  );
+}
+
+export default function ResultsPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="results-page">
+          <div className="r-wrap">Loading results...</div>
+        </main>
+      }
+    >
+      <ResultsContent />
+    </Suspense>
   );
 }
