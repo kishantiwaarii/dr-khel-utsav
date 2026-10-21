@@ -19,6 +19,35 @@
 }
 
 /* Header */
+.registration-page .register-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 22px 0;
+  color: #8b9aaf;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.registration-page .register-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.registration-page .register-breadcrumb a:hover {
+  color: #c8f169;
+}
+
+.registration-page .register-breadcrumb span:last-child {
+  color: #f3f6fa;
+}
+
+@media (max-width: 760px) {
+  .registration-page .register-breadcrumb {
+    padding: 17px 0;
+  }
+}
+
 .topbar {
   position: relative;
   z-index: 5;

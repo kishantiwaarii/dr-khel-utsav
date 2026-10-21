@@ -499,24 +499,12 @@ export default function RegisterPage() {
   return (
     <main className="registration-page">
       <header className="topbar">
-        <button
-          type="button"
-          className="nav-link"
-          onClick={handleBack}
-        >
-          Back
-        </button>
-
-        <img
-          src="/favicon.ico"
-          alt=""
-          className="topbar-logo"
-        />
-
-        <Link href="/" className="nav-link">
-          Home
-        </Link>
-      </header>
+  <nav aria-label="Breadcrumb" className="register-breadcrumb">
+    <Link href="/">Home</Link>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Register</span>
+  </nav>
+</header>
 
       <div className="page-wrap">
         <section className="intro">
